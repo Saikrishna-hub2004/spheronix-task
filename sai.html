@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Flex + Grid Hero</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a;
+    font-family: Arial, sans-serif;
+  }
+
+  .hero {
+    display: flex;
+    width: 90%;
+    height: 80vh;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /* LEFT IMAGE */
+  .left {
+    flex: 1;
+    display: grid;
+    place-items: center;
+    background: url("https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d") center/cover no-repeat;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  /* RIGHT SIDE */
+  .right {
+    flex: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .right::before,
+  .right::after {
+    content: "";
+    display: block;
+  }
+
+  /* TOP IMAGE */
+  .right::before {
+    background: url("https://images.unsplash.com/photo-1492724441997-5dc865305da7") center/cover no-repeat;
+  }
+
+  /* BOTTOM IMAGE */
+  .right::after {
+    background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover no-repeat;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+  <div class="left">Hero Section</div>
+  <div class="right"></div>
+</div>
+
+</body>
+</html>
